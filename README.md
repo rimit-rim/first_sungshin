@@ -1,3 +1,4 @@
+
 # 📦 백엔드 초기 세팅 공유 (FastAPI + PostgreSQL + SQLAlchemy)
 
 ## ✅ 구성 파일
@@ -46,3 +47,8 @@ uvicorn app.main:app --reload
 - ORM: SQLAlchemy 사용
 - DB: PostgreSQL
 - API 서버: FastAPI
+
+# first_sungshin
+2025년도 AI융합학부 소프트웨어 경진대회<br>
+**어서와, 성신은 처음이지?** 레포지토리
+

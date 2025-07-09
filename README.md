@@ -6,13 +6,14 @@
 
 ## ✅ 구성 파일
 
-| 파일 | 설명 |
-|------|------|
-| `database.py` | PostgreSQL 연결 설정 |
-| `models/user.py` | User 모델 (ERD 기반) |
-| `models/post.py` | Post 모델 |
-| `models/comment.py` | Comment 모델 |
-| `main.py` | FastAPI 앱 + 테이블 생성 실행 파일 |
+| 파일                  | 설명                       |
+|---------------------|--------------------------|
+| `database.py`       | PostgreSQL 연결 설정         |
+| `models/user.py`    | User 모델                  |
+| `models/post.py`    | Post 모델                  |
+| `models/comment.py` | Comment 모델               |
+| `models/board.py`   | Board 모델                 |
+| `main.py`           | FastAPI 앱 + 테이블 생성 실행 파일 |
 
 ---
 

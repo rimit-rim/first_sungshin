@@ -9,5 +9,5 @@ class User(Base):
     nickname = Column(String(10), nullable=False)
     email = Column(String(40), nullable=False, unique=True)
     password = Column(String(100), nullable=False)
-    verification = Column(Integer, nullable=False, default=0)
+    verification = Column(Integer, nullable=False, default=0)   # 0: 일반, 1: 인증, 2: 관리자
     createdAt = Column(DateTime(timezone=True), server_default=func.now())

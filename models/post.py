@@ -11,4 +11,6 @@ class Post(Base):
     image = Column(String, nullable=True)
     createdAt = Column(DateTime(timezone=True), server_default=func.now())
     updatedAt = Column(DateTime(timezone=True), nullable=True)
+
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
+    boardId = Column(Integer, ForeignKey("board.id"), nullable=False)

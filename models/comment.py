@@ -10,3 +10,7 @@ class Comment(Base):
     createdAt = Column(DateTime(timezone=True), server_default=func.now())
     userId = Column(Integer, ForeignKey("user.id"), nullable=False)
     postId = Column(Integer, ForeignKey("post.id"), nullable=False)
+
+    # 관계 설정
+    user = relationship("User", back_populates="comments")
+    post = relationship("Post", back_populates="comments")

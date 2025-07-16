@@ -6,5 +6,8 @@ class Board(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(20), nullable=False)
-    isPublic = Column(Boolean, nullable=False, default=False)  # 열람 허용 여부
-    writePost = Column(Integer, nullable=False, default=0)  # 0: 인증 사용자, 1: 관리자
+    accessLevel = Column(Integer, nullable=False, default=0)  # 0: 일반 가입자, 1: 인증된 가입자, 2: 관리자
+    slug = Column(String(30), nullable=False, unique=True)  # 게시판 이름
+
+    # 관계 설정
+    posts = relationship("Post", back_populates="board")

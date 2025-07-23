@@ -1,9 +1,8 @@
 from fastapi import FastAPI
-from database import engine
+from database import engine, Base
 from models import user, post, comment, board
 
 app = FastAPI()
 
-user.Base.metadata.create_all(bind=engine)
-post.Base.metadata.create_all(bind=engine)
-comment.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
+

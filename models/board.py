@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from app.database import Base
+from database import Base
+from sqlalchemy.orm import relationship
+
 
 class Board(Base):
     __tablename__ = "board"

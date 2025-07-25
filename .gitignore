@@ -1,12 +1,21 @@
-# Python 캐시 파일
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.env
 
-# 환경 변수 파일
+# Environments
 .env
+.venv/
+venv/
+ENV/
+env/
 
-# PyCharm
+# IDE
+.vscode/
 .idea/
-*.iml
-*.iws
-*.ipr
+
+# Databases / Logs
+*.db
+*.log

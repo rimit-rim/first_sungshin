@@ -1,17 +1,27 @@
 from fastapi import FastAPI
-from database import engine, Base
+from database import engine
 from models import user, post, comment, board
 from routers import auth, users
+from routers.posts import router as post_router
+from routers.boards import router as boards_router
 from fastapi.openapi.utils import get_openapi
 
 app = FastAPI()
 
 # 라우터 등록
+app.include_router(boards_router)
+app.include_router(post_router)
 app.include_router(auth.router)
 app.include_router(users.router)
 
 # DB 테이블 생성
-Base.metadata.create_all(bind=engine)
+try:
+    user.Base.metadata.create_all(bind=engine)
+    post.Base.metadata.create_all(bind=engine)
+    comment.Base.metadata.create_all(bind=engine)
+    board.Base.metadata.create_all(bind=engine)
+except Exception as e:
+    print("⚠️ DB 연결 실패 (개발 중, 무시 가능):", e)
 
 # Swagger 커스터 마이징
 def custom_openapi():
@@ -43,4 +53,3 @@ def custom_openapi():
     return app.openapi_schema
 
 app.openapi = custom_openapi
-

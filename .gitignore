@@ -15,6 +15,13 @@ env/
 # IDE
 .vscode/
 .idea/
+*.iml
+*.iws
+*.ipr
+
+# http 테스트 파일
+test.http
+
 
 # Databases / Logs
 *.db

@@ -10,3 +10,6 @@ __pycache__/
 *.iml
 *.iws
 *.ipr
+
+# http 테스트 파일
+test.http

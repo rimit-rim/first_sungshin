@@ -60,5 +60,7 @@ async def google_callback(request: Request, db: Session = Depends(get_db)):
     user = user_service.get_or_create_user(db, user_info)
 
     # 4. JWT 발급
-    token = create_access_token({"sub": user.email})
-    return {"access_token": token, "token_type": "bearer"}
+    token = create_access_token({"sub": str(user.id)})
+    return RedirectResponse(
+        f"http://localhost:8000/oauth-success?token={token}"
+    )

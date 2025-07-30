@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import engine
 from models import user, post, comment, board
-from routers import auth, users
+from routers import auth, users, comments
 from routers.posts import router as post_router
 from routers.boards import router as boards_router
 from fastapi.openapi.utils import get_openapi
@@ -13,6 +13,7 @@ app.include_router(boards_router)
 app.include_router(post_router)
 app.include_router(auth.router)
 app.include_router(users.router)
+app.include_router(comments.router)
 
 # DB 테이블 생성
 try:
@@ -29,9 +30,9 @@ def custom_openapi():
         return app.openapi_schema
 
     openapi_schema = get_openapi(
-        title="First Sungshin API",
+        title="Welcome to Sungshin API",
         version="1.0.0",
-        description="Google Login 기반 마이페이지 API",
+        description="국제학생들을 위한 학교 커뮤니티",
         routes=app.routes,
     )
 

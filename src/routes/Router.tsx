@@ -23,12 +23,13 @@ import Create from '../Pages/Create';
 import Post from '../Pages/Post';
 import AIChatHome from '../Pages/AIChatHome';
 import AIChatInput from '../Pages/AIChatInput';
+import CommunityBoards from '../Pages/CommunityBoards';
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<CommunityHome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/wiki" element={<SoojeongWiki />} />
@@ -45,7 +46,8 @@ export default function Router() {
         <Route path="/schoolinfo" element={<SchoolInfo />} />
         <Route path="/chat" element={<AIChatHome />} />
         <Route path="/chat/input" element={<AIChatInput />} />
-        <Route path="/community" element={<CommunityHome />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/communityboards" element={<CommunityBoards/>}/>
         <Route path="/community/free" element={<BoardForFreeUse />} />
         <Route path="/community/qna" element={<BoardForQAs />} />
         <Route path="/community/career" element={<BoardForCareer />} />

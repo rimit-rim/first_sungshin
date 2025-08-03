@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import HomeLogo from "../assets/images/HomeLogo.png";
 import commentIcon from "../assets/images/comment.png";
-import BookmarkIcon from "../assets/images/bookmark.png";
+import BookmarkIcon from "../assets/images/Bookmark.png";
 import ChatIcon from "../assets/images/chat.png";
-import CommunityIcon from "../assets/images/collaborating-in-circle.png";
-import MyPageIcon from "../assets/images/admin-settings-male.png";
+import CommunityIcon from "../assets/images/Collaborating In Circle.png";
+import MyPageIcon from "../assets/images/Admin Settings Male.png";
 
 type Post = {
   id: number;

@@ -3,10 +3,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 // 이미지 import
 import HomeLogo from "../assets/images/HomeLogo.png";
-import BookmarkIcon from "../assets/images/bookmark.png";
-import ChatIcon from "../assets/images/chat.png";
-import CommunityIcon from "../assets/images/collaborating-in-circle.png";
-import MyPageIcon from "../assets/images/admin-settings-male.png";
+import BookmarkIcon from "../assets/images/Bookmark.png";
+import ChatIcon from "../assets/images/Chat.png";
+import CommunityIcon from "../assets/images/Collaborating In Circle.png";
+import MyPageIcon from "../assets/images/Admin Settings Male.png";
 
 // 게시글 타입 정의
 type Post = {

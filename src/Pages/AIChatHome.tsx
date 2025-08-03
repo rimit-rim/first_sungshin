@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import adminSettingsMale from "../assets/images/admin-settings-male.png";
-import bookmark from "../assets/images/bookmark.png";
-import chat from "../assets/images/chat.png";
-import collaboratingInCircle from "../assets/images/collaborating-in-circle.png";
+import adminSettingsMale from "../assets/images/Admin Settings Male.png";
+import bookmark from "../assets/images/Bookmark.png";
+import chat from "../assets/images/Chat.png";
+import collaboratingInCircle from "../assets/images/Collaborating In Circle.png";
 import logoWithText from "../assets/images/HomeLogo.png"; // 로고+텍스트 통합 이미지
 
 // type ChatMessage = {

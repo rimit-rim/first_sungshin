@@ -5,8 +5,18 @@ from routers import auth, users, comments, chatbot
 from routers.posts import router as post_router
 from routers.boards import router as boards_router
 from fastapi.openapi.utils import get_openapi
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# cors 설정
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # 프론트 주소
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 라우터 등록
 app.include_router(boards_router)

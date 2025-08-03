@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import engine
 from models import user, post, comment, board
-from routers import auth, users, comments
+from routers import auth, users, comments, chatbot
 from routers.posts import router as post_router
 from routers.boards import router as boards_router
 from fastapi.openapi.utils import get_openapi
@@ -14,6 +14,7 @@ app.include_router(post_router)
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(comments.router)
+app.include_router(chatbot.router)
 
 # DB 테이블 생성
 try:

@@ -206,7 +206,7 @@ export default function AcademicStudyClubs() {
         
         <div className='mb-4 h-16 w-auto flex-shrink-0
                         xl:absolute xl:top-[50px] xl:left-[100px] xl:w-[727px] xl:h-[105px]'> 
-          <Link to="/">
+          <Link to="/home">
             <img
               src={HomeLogo} 
               alt="Welcome to Sungshin Logo"

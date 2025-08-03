@@ -92,7 +92,9 @@ const AIChatHome = () => {
     <div className="relative w-[1440px] h-[1024px] bg-white">
       {/* 로고 (이미지 한 장으로 처리) */}
       <header className="absolute top-[65px] left-[100px]">
-        <img src={logoWithText} alt="Welcome To Sungshin" className="w-[500px] h-auto" />
+        <button onClick={()=>navigate("/home")}>
+          <img src={logoWithText} alt="Welcome To Sungshin" className="w-[500px] h-auto" />
+        </button>
       </header>
 
       {/* 내비게이션 */}

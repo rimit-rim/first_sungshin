@@ -30,12 +30,12 @@ const Create: React.FC<Props> = ({ onPost }) => {
 
   const handlePost = () => {
     if (!title.trim() || !bodyText.trim()) {
-      alert("제목과 내용을 모두 입력해주세요.");
+      alert("You have to fill in the both title and content container");
       return;
     }
 
     if (!board) {
-      alert("게시판 정보가 없습니다.");
+      alert("The board does not exist.");
       return;
     }
 

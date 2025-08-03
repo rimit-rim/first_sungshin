@@ -44,40 +44,42 @@ const AIChatInput = () => {
   //if (!isLoggedIn) return null;
 
   return (
-    <div className="relative w-[1440px] h-[1024px] bg-white">
+    <div className="relative w-[1440px] h-[1024px] bg-white font-pretendard">
       {/* 로고 */}
       <header className="absolute top-[65px] left-[100px]">
-        <img src={HomeLogo} alt="Welcome To Sungshin Logo" className="w-auto h-[60px]" />
+        <button onClick={()=>navigate("/home")}>
+          <img src={HomeLogo} alt="Welcome To Sungshin Logo" className="w-auto h-[60px]" />
+        </button>
       </header>
 
       {/* 네비게이션 */}
-      <nav className="absolute w-[783px] h-[50px] top-[178px] right-[100px] flex gap-[21px] justify-end">
+      <nav className="absolute w-[783px] h-[50px] top-[178px] right-[100px] flex gap-[21px] justify-end font-pretendard">
         <button
           onClick={() => navigate("/wiki")}
           className="w-[180px] h-[50px] rounded-[20px] border border-black flex items-center justify-center gap-2 hover:bg-[#E5DFFD] transition"
         >
           <img src={BookmarkIcon} alt="Sujeong Wiki" className="w-5 h-5" />
-          <span className="[font-family:'Pretendard_Variable-Light',Helvetica] font-light">SUJEONG-WIKI</span>
+          <span className="[font-family:'Pretendard_Variable-Light'] font-light">SUJEONG-WIKI</span>
         </button>
         <button
           className="w-[180px] h-[50px] rounded-[20px] bg-[#B6A1FA] flex items-center justify-center gap-2 font-semibold"
         >
           <img src={ChatIcon} alt="AI Chat" className="w-5 h-5" />
-          <span className="[font-family:'Pretendard_Variable-Medium',Helvetica]">AI Chat</span>
+          <span className="[font-family:'Pretendard_Variable-Medium']">AI Chat</span>
         </button>
         <button
           onClick={() => navigate("/community")}
           className="w-[180px] h-[50px] rounded-[20px] border border-black flex items-center justify-center gap-2 hover:bg-[#E5DFFD] transition"
         >
           <img src={CommunityIcon} alt="Community" className="w-5 h-5" />
-          <span className="[font-family:'Pretendard_Variable-Light',Helvetica] font-light">Community</span>
+          <span className="[font-family:'Pretendard_Variable-Light'] font-light">Community</span>
         </button>
         <button
           onClick={() => navigate("/mypage")}
           className="w-[180px] h-[50px] rounded-[20px] border border-black flex items-center justify-center gap-2 hover:bg-[#E5DFFD] transition"
         >
           <img src={MyPageIcon} alt="My Page" className="w-5 h-5" />
-          <span className="[font-family:'Pretendard_Variable-Light',Helvetica] font-light">My Page</span>
+          <span className="[font-family:'Pretendard_Variable-Light'] font-light">My Page</span>
         </button>
       </nav>
 

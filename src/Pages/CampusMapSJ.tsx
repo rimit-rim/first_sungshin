@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Link , useLocation} from 'react-router-dom';
 
 // 로고 + 네비게이션바 아이콘 이미지 
@@ -135,9 +134,4 @@ export default function CampusMapSJ() {
         </div>
       </main>
     </div>
-  );
-=======
-export default function CampusMapSJ() {
-  return <div>수정 캠퍼스맵 페이지입니다</div>;
->>>>>>> FE-huijae
-}
+  )};

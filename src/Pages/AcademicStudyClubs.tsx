@@ -161,7 +161,7 @@ const Sidebar: React.FC<{
         <div className="p-4 md:p-0">
           <div className="flex justify-between items-center md:hidden mb-4">
             <h2 className="font-bold text-lg">Categories</h2>
-            <button onClick={onClose}><X size={24} /></button>
+            <button type="button" title="Close" onClick={onClose}><X size={24} /></button>
           </div>
           <div className="bg-violet-300 text-gray-800 py-3 px-4 rounded-xl mb-4 text-center">
             <h2 className="font-bold text-lg">School Clubs</h2>
@@ -256,7 +256,7 @@ export default function AcademicStudyClubs() {
       <main className="px-4 sm:px-6 md:px-10 xl:px-[100px] my-8">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:hidden flex items-center mb-4">
-            <button onClick={() => setSidebarOpen(true)} className="p-2 rounded-md hover:bg-gray-100">
+            <button type="button" title="Open" onClick={() => setSidebarOpen(true)} className="p-2 rounded-md hover:bg-gray-100">
               <Menu size={24} />
             </button>
             <span className="ml-2 font-bold text-lg">School Clubs</span>

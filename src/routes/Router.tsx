@@ -1,4 +1,4 @@
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import LandingPage from '../Pages/LandingPage';
 // import Login from '../Pages/Login';
 // import MyPage from '../Pages/MyPage';
@@ -58,3 +58,14 @@
 //     </BrowserRouter>
 //   );
 // }
+
+// const Router = () => {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
+
+// export default Router;

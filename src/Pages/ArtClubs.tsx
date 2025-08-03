@@ -223,5 +223,4 @@ export default function ArtClubs() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

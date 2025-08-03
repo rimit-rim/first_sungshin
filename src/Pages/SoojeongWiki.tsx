@@ -158,5 +158,4 @@ export default function SoojeongWiki() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

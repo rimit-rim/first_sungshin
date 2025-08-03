@@ -283,5 +283,4 @@ export default function AcademicStudyClubs() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

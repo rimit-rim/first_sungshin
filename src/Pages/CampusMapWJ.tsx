@@ -135,5 +135,4 @@ export default function CampusMapWJ() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

@@ -232,5 +232,4 @@ export default function HobbyClubs() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

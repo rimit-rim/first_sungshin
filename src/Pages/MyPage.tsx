@@ -144,5 +144,4 @@ export default function MyPage() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

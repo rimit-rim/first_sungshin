@@ -222,5 +222,4 @@ export default function SportsClubs() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

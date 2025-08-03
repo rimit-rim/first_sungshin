@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Instagram, Menu, X } from 'lucide-react';
@@ -220,4 +221,8 @@ export default function ReligionClubs() {
       </main>
     </div>
   );
+=======
+export default function ReligionClubs() {
+  return <div>종교 분과 동아리 페이지입니다</div>;
+>>>>>>> FE-huijae
 }

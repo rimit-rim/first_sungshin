@@ -4,7 +4,11 @@ import {defineConfig} from 'tailwindcss';
 export default {
   content: [
     "./index.html",
+<<<<<<< HEAD
     "./src/**/*.{js,ts,jsx,tsx}",
+=======
+    "./src/**/*.{js, ts, jsx, tsx}",
+>>>>>>> FE-huijae
   ],
   theme: {
     extend: {
@@ -43,5 +47,9 @@ export default {
     },
   },
   plugins: [],
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> FE-huijae

@@ -200,5 +200,4 @@ export default function CommunityServiceClubs() {
         </div>
       </main>
     </div>
-  );
-}
+  )};

@@ -33,7 +33,7 @@ const PostDetails = () => {
     <div className="px-10 py-8 font-pretendard">
       {/* 로고 */}
       <div className="w-[1240px] flex justify-start py-4">
-        <button onClick={() => navigate("/")}>
+        <button onClick={() => navigate("/home")}>
           <img src={HomeLogo} alt="Home Logo" className="h-[60px]" />
         </button>
       </div>

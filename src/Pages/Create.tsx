@@ -54,7 +54,7 @@ const Create: React.FC<Props> = ({ onPost }) => {
     <div className="w-full min-h-screen px-8 md:px-20 py-10 font-pretendard">
       {/* 헤더 로고 */}
       <div className="flex justify-center mb-6">
-        <button onClick={() => navigate("/")}>
+        <button onClick={() => navigate("/home")}>
           <img
             src={HomeLogo}
             alt="Home"

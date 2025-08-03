@@ -31,11 +31,11 @@ const CommunityHome = () => {
   return (
     <div className="w-full max-w-[1440px] max-h-[1024px] mx-auto px-4 py-8 font-pretendard">
       {/* 상단 제목 */}
-      <img
-        src={HomeLogo}
-        alt="Welcome To Sungshin Logo"
-        className="w-auto h-[60px] mb-6"
-      />
+      <div className="w-[1240px] flex justify-start py-4">
+        <button onClick={() => navigate("/home")}>
+          <img src={HomeLogo} alt="Home Logo" className="h-[60px]" />
+        </button>
+      </div>
 
       {/* 네비게이션 */}
       <div className="flex justify-end gap-4 mb-12">

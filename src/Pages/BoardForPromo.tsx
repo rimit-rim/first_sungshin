@@ -27,7 +27,7 @@ const BoardForPromo: React.FC<Props> = ({ posts }) => {
     <div className="flex flex-col items-center w-full font-pretendard">
       {/* 상단: 왼쪽 정렬 로고 */}
       <div className="w-[1240px] flex justify-start py-4">
-        <button onClick={() => navigate("/")}>
+        <button onClick={() => navigate("/home")}>
           <img src={HomeLogo} alt="Home Logo" className="h-[60px]" />
         </button>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Instagram, Menu, X } from 'lucide-react';
 
-// --- 헤더에 사용되는 이미지 임포트 (사용자 코드 유지) ---
+// --- 로고+네비+뒤로가기---
 import HomeLogo from '../assets/images/HomeLogo.png';
 import SoojeongWikiIcon from '../assets/images/Bookmark.png';
 import AIChatIcon from '../assets/images/Chat.png';
@@ -10,15 +10,14 @@ import CommunityIcon from '../assets/images/Collaborating In Circle.png';
 import MyPageIcon from '../assets/images/Admin Settings Male.png';
 import BackButton from '../assets/images/Back.png';
 
-// 클럽 데이터 타입 정의
+// 동아리 데이터
 interface Club {
   name: string;
   description: string;
   instagram: string;
 }
 
-// 전체 동아리 데이터 (카테고리별로 그룹화)
-// 다른 파일에서도 사용해야 하므로, 별도의 데이터 파일로 분리하는 것을 추천합니다.
+// 전체 동아리 데이터 
 const allClubs: { [key: string]: Club[] } = {
   Performance: [
     { name: 'Juriulim', description: 'Classic Guitar Club', instagram: 'https://www.instagram.com/juriulim_sswu/' },
@@ -38,7 +37,7 @@ const allClubs: { [key: string]: Club[] } = {
   'Academic Study': [],
 };
 
-// 사이드바 링크 데이터 (Router.tsx의 경로와 일치시켜야 합니다)
+// 사이드바
 const sidebarLinks = [
     { name: 'Performance', path: '/schoolclubs/performanceclubs' },
     { name: 'Community Service', path: '/schoolclubs/communityserviceclubs' },

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import HomeLogo from '../assets/images/HomeLogo.png';
 import SoojeongWikiIcon from '../assets/images/Bookmark.png';
 import AIChatIcon from '../assets/images/Chat.png';
-import CommunityIcon from '../assets/images/Collaborating In Circle.png'; // <-- 여기 수정: 공백을 하이픈으로 변경
+import CommunityIcon from '../assets/images/Collaborating In Circle.png'; 
 import MyPageIcon from '../assets/images/Admin Settings Male.png';
 
 export default function MyPage() {
@@ -85,14 +85,14 @@ export default function MyPage() {
       </header>
 
       {/* Main Content Area for My Page */}
-      {/* Flex container for the two-column layout */}
+     
       <main className="mx-4 sm:mx-6 md:mx-10 xl:mx-[100px] mt-8 p-6 bg-white flex flex-col md:flex-row md:space-x-12">
         {/* Left Section: My Page Title */}
         <div className="md:w-1/3 mb-8 md:mb-0">
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-800">My Page</h1>
         </div>
 
-        {/* Right Section: Form Fields */}
+        
         <div className="md:w-2/3 space-y-6">
           {/* Name Field */}
           <div>

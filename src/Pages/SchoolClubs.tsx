@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 // 로고 + 네비게이션바 아이콘 이미지 
 import HomeLogo from '../assets/images/HomeLogo.png';
@@ -15,7 +16,6 @@ import Religion from '../assets/images/Religion.png';
 import Hobby from '../assets/images/Hobby.png';
 import Sports from '../assets/images/Sports.png';
 import AcademicStudy from '../assets/images/AcademicStudy.png';
-
 
 export default function SchoolClubs() {
   return (

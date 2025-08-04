@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Instagram, Menu, X } from 'lucide-react';
+import axios from "axios";
 
 // 로고+네비+뒤로가기
 import HomeLogo from '../assets/images/HomeLogo.png';
@@ -9,7 +10,6 @@ import AIChatIcon from '../assets/images/Chat.png';
 import CommunityIcon from '../assets/images/Collaborating In Circle.png';
 import MyPageIcon from '../assets/images/Admin Settings Male.png';
 import BackButton from '../assets/images/Back.png';
-
 
 // 동아리 데이터 타입
 interface Club {

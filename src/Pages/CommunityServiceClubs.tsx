@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Instagram, Menu, X } from 'lucide-react';
+import axios from "axios";
 
 // --- 헤더에 사용되는 이미지 임포트 (사용자 코드 유지) ---
 import HomeLogo from '../assets/images/HomeLogo.png';

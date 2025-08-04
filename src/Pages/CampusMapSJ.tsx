@@ -1,4 +1,5 @@
 import { Link , useLocation} from 'react-router-dom';
+import axios from "axios";
 
 // 로고 + 네비게이션바 아이콘 이미지 
 import HomeLogo from '../assets/images/HomeLogo.png';

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
+import axios from "axios";
 
 import HomeLogo from "../assets/images/HomeLogo.png";
 import BookmarkIcon from "../assets/images/Bookmark.png";

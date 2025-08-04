@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import LearnMoreIcon from "../assets/images/LearnMore.png"; // 화살표 이미지
 import HomeLogo from "../assets/images/HomeLogo.png";
 import BookmarkIcon from "../assets/images/Bookmark.png";

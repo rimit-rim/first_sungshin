@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 // 이미지 import
 import HomeLogo from "../assets/images/HomeLogo.png";

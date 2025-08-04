@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import HomeLogo from "../assets/images/HomeLogo.png";
 import commentIcon from "../assets/images/comment.png";

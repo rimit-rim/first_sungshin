@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Instagram, Menu, X } from 'lucide-react';
+import axios from "axios";
 
 // --- 로고+네비+뒤로가기
 import HomeLogo from '../assets/images/HomeLogo.png';

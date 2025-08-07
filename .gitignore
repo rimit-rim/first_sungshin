@@ -23,5 +23,19 @@ dist-ssr
 *.sln
 *.sw?
 
-# 백엔드
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 backend/.env
+.env
+test.http
+backend/__pycache__/
+__pycache__
+backend/routers/__pycache__/
+backend/schemas/__pycache__/
+backend/core/__pycache__/
+backend/deps/__pycache__/
+backend/models/__pycache__/
+backend/services/__pycache__/

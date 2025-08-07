@@ -4,7 +4,7 @@ from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe
 from langchain_openai import ChatOpenAI
 from langchain.agents.agent_types import AgentType
 
-csv_path = "data/sungshin_calendar_2025_2nd_semester.csv"
+csv_path = ""
 
 def get_calendar_response(question: str) -> str:
     os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY", "sk-...")  # 또는 .env로 관리

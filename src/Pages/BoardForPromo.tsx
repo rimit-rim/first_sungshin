@@ -86,7 +86,7 @@ const BoardForPromo: React.FC<Props> = ({ posts }) => {
           sortedPosts.map((post) => (
             <div
               key={post.id}
-              onClick={() => navigate(`/post/${post.id}`, { state: post })}
+              onClick={() => navigate(`/community/post/${post.id}`, { state: post })}
               className="w-[1240px] h-[164px] border-b border-gray-200 flex flex-col justify-between py-4 cursor-pointer hover:bg-gray-50"
             >
               {/* 제목 */}

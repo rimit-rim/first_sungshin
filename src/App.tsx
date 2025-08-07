@@ -1,9 +1,3 @@
-//import { Router } from './routes/Router';
-
-// function App() {
-//   return <Router />;
-
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // 페이지 import
@@ -35,26 +29,7 @@ import Home from "./Pages/Home";
 import HelloTest from './Pages/HelloTest';
 import OauthSuccess from './Pages/OauthSuccess';
 
-type Post = {
-  id: number;
-  title: string;
-  content: string;
-  commentCount: number;
-};
-
 function App() {
-  const [freePosts, setFreePosts] = useState<Post[]>([]);
-  const [careerPosts, setCareerPosts] = useState<Post[]>([]);
-  const [qaPosts, setQaPosts] = useState<Post[]>([]);
-  const [promoPosts, setPromoPosts] = useState<Post[]>([]);
-
-  const handlePost = (post: Post, board: string) => {
-    if (board === "free") setFreePosts((prev) => [post, ...prev]);
-    else if (board === "career") setCareerPosts((prev) => [post, ...prev]);
-    else if (board === "qna") setQaPosts((prev) => [post, ...prev]);
-    else if (board === "promo") setPromoPosts((prev) => [post, ...prev]);
-  };
-
   return (
     <BrowserRouter>
       <Routes>
@@ -79,13 +54,20 @@ function App() {
         <Route path="/test" element={<HelloTest />} />
         <Route path="/oauth-success" element={<OauthSuccess />} />
 
-        {/* 커뮤니티 */}
+        {/* 커뮤니티 - API 연동 완료 */}
         <Route path="/community" element={<CommunityHome />} />
-        <Route path="/community/free" element={<BoardForFreeUse posts={freePosts} />} />
-        <Route path="/community/career" element={<BoardForCareer posts={careerPosts} />} />
-        <Route path="/community/qna" element={<BoardForQAs posts={qaPosts} />} />
-        <Route path="/community/promo" element={<BoardForPromo posts={promoPosts} />} />
-        <Route path="/create" element={<Create onPost={handlePost} />} />
+        <Route path="/community/free" element={<BoardForFreeUse />} />
+        <Route path="/community/career" element={<BoardForCareer />} />
+        <Route path="/community/qna" element={<BoardForQAs />} />
+        <Route path="/community/promo" element={<BoardForPromo />} />
+
+        {/* 글 작성 - API 연동으로 변경 */}
+        <Route path="/create" element={<Create />} />
+
+        {/* 게시글 상세 - API 연동으로 변경 */}
+        <Route path="/community/post/:postId" element={<PostDetails />} />
+
+        {/* 기존 경로 호환성 유지 (필요시) */}
         <Route path="/post/:id" element={<PostDetails />} />
       </Routes>
     </BrowserRouter>

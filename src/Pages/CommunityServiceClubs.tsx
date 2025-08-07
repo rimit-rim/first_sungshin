@@ -155,7 +155,7 @@ export default function CommunityServiceClubs() {
               </Link>
             </li>
             <li className="flex items-center group">
-              <Link to="/communityboards" className="flex items-center px-3 py-2 rounded-lg transition-colors duration-200 group-hover:bg-violet-100 group-hover:text-purple-600 group-focus:bg-purple-400 group-focus:text-white text-sm">
+              <Link to="/community" className="flex items-center px-3 py-2 rounded-lg transition-colors duration-200 group-hover:bg-violet-100 group-hover:text-purple-600 group-focus:bg-purple-400 group-focus:text-white text-sm">
                 <img src={CommunityIcon} alt="Community Icon" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain" />
                 Community
               </Link>

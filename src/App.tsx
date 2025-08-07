@@ -32,6 +32,7 @@ import PostDetails from "./Pages/Post";
 import AIChatHome from "./Pages/AIChatHome";
 import AIChatInput from "./Pages/AIChatInput";
 import Home from "./Pages/Home";
+import HelloTest from './Pages/HelloTest';
 
 type Post = {
   id: number;
@@ -74,6 +75,7 @@ function App() {
         <Route path="/chat" element={<AIChatHome />} />
         <Route path="/chat/input" element={<AIChatInput />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/test" element={<HelloTest />} />
 
         {/* 커뮤니티 */}
         <Route path="/community" element={<CommunityHome />} />

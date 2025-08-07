@@ -12,7 +12,10 @@ app = FastAPI()
 # cors 설정
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # 프론트 주소
+    allow_origins=[
+        "http://localhost:3000", 
+        "http://localhost:5173",
+    ],  # 프론트 주소
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -65,3 +68,7 @@ def custom_openapi():
     return app.openapi_schema
 
 app.openapi = custom_openapi
+
+@app.get("/hello")
+def read_hello():
+    return {"message": "Hello from FastAPI!"}

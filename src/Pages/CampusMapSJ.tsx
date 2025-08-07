@@ -60,7 +60,7 @@ export default function CampusMapSJ() {
             </li>
             {/* Community */}
             <li className="flex items-center group">
-              <Link to="/communityboards" className="
+              <Link to="/community" className="
                 flex items-center px-3 py-2 rounded-lg transition-colors duration-200
                 group-hover:bg-violet-100 group-hover:text-purple-600
                 group-focus:bg-purple-400 group-focus:text-white

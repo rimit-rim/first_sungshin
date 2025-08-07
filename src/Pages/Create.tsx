@@ -82,7 +82,7 @@ const Create: React.FC<Props> = ({ onPost }) => {
         </button>
         <button
           disabled
-          className="w-[180px] h-[40px] rounded flex items-center justify-center gap-2 bg-[#E5DFFD] font-semibold text-black cursor-default"
+          className="w-[180px] h-[40px] rounded flex items-center justify-center gap-2 bg-[#B6A1FA] font-semibold text-black cursor-default"
         >
           <img src={CommunityIcon} alt="Community" className="w-5 h-5" />
           Community

@@ -67,3 +67,7 @@ def custom_openapi():
     return app.openapi_schema
 
 app.openapi = custom_openapi
+
+@app.get("/hello")
+def read_hello():
+    return {"message": "Hello from FastAPI!"}

@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 interface LoginLandingProps {
   className?: string;
@@ -8,12 +7,20 @@ interface LoginLandingProps {
 }
 
 const Login_Landing = ({ className, googleLogoIcon, property1 }: LoginLandingProps): React.JSX.Element => {
+  // 클릭 핸들러 정의
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:8000/api/auth/google/login";
+  };
+
   return (
     <div className={className}>
-      <div className="w-full flex justify-center">
-        <button className="w-full max-w-[425px] h-[48px] flex items-center justify-center gap-3 border border-gray-300 rounded shadow hover:bg-gray-100 transition">
-          <img src={googleLogoIcon} alt="Google Logo" className="w-8 h-8" />
-          <span className="text-[20px] font-light font-pretendard">
+      <div className="w-full flex justify-center font-pretendard">
+        <button
+          onClick={handleGoogleLogin}
+          className="w-full max-w-[425px] h-[53px] flex items-center justify-center gap-3 border border-gray-300 rounded shadow hover:bg-gray-100 transition"
+        >
+          <img src={googleLogoIcon} alt="Google Logo" className="w-5 h-5" />
+          <span className="text-[22px] font-light font-pretendard">
             {property1 === "default" ? "Continue With Google" : "Other Login"}
           </span>
         </button>

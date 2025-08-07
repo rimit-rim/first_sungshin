@@ -26,7 +26,7 @@ const CommunityHome = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("accessToken");
+    const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, []);
 

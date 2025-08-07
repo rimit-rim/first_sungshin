@@ -89,9 +89,8 @@ export default function Home() {
       </header>
       {/* 카드 */}
       <main className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 mx-4 sm:mx-6 md:mx-10 xl:mx-[100px]">
-
-        {/* 카드 1 */}
-        <div className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300">
+        <Link to = "/wiki" className = "bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300">
+          {/* 카드 1 */}
           <div>
             <h2 className="text-3xl font-medium text-gray-0 mb-2">
               <span className="inline-block bg-indigo-200 px-1 py-0.5 rounded">Get Must-have Information</span><br/> 
@@ -111,10 +110,10 @@ export default function Home() {
             </div>
             Learn More 
           </div>
-        </div>
+        </Link>
 
         {/* 카드 2 */}
-        <div className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300"> {/* <-- hover:bg-purple-400 추가 */}
+        <Link to = '/chat' className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300"> {/* <-- hover:bg-purple-400 추가 */}
           <div>
             <h2 className="text-3xl font-medium text-gray-0 mb-2">
               <span className="inline-block bg-indigo-200 px-1 py-0.5 rounded">Chat With AI</span><br/> 
@@ -134,11 +133,11 @@ export default function Home() {
             </div>
             Learn More 
           </div>
-        </div>
+        </Link>
 
 
         {/* 3. 카드 3 */}
-        <div className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300"> {/* <-- hover:bg-purple-400 추가 */}
+        <Link to ="/community" className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300"> {/* <-- hover:bg-purple-400 추가 */}
           <div>
             <h2 className="text-3xl font-medium text-gray-0 mb-2">
               <span className="inline-block bg-indigo-200 px-1 py-0.5 rounded">Communication With</span><br/> 
@@ -158,11 +157,11 @@ export default function Home() {
             </div>
             Learn More 
           </div>
-        </div>
+        </Link>
 
 
         {/* 3. 카드 4 */}
-        <div className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300"> {/* <-- hover:bg-purple-400 추가 */}
+        <Link to ="/mypage" className="bg-violet-100 p-6 rounded-lg shadow-[0_4px_6px_theme('colors.violet.300')] hover:shadow-[0_8px_12px_theme('colors.violet.300)] shadow-violet-300 transition-shadow duration-300 flex flex-col justify-between w-full h-auto relative hover:bg-violet-300"> {/* <-- hover:bg-purple-400 추가 */}
           <div>
             <h2 className="text-3xl font-medium text-gray-0 mb-2">
               <span className="inline-block bg-indigo-200 px-1 py-0.5 rounded">Get verified,</span><br/> 
@@ -177,7 +176,7 @@ export default function Home() {
             </div>
             Learn More 
           </div>
-        </div>
+        </Link>
       </main>
     </div>
   );

@@ -33,6 +33,7 @@ import AIChatHome from "./Pages/AIChatHome";
 import AIChatInput from "./Pages/AIChatInput";
 import Home from "./Pages/Home";
 import HelloTest from './Pages/HelloTest';
+import OauthSuccess from './Pages/OauthSuccess';
 
 type Post = {
   id: number;
@@ -76,6 +77,7 @@ function App() {
         <Route path="/chat/input" element={<AIChatInput />} />
         <Route path="/home" element={<Home />} />
         <Route path="/test" element={<HelloTest />} />
+        <Route path="/oauth-success" element={<OauthSuccess />} />
 
         {/* 커뮤니티 */}
         <Route path="/community" element={<CommunityHome />} />

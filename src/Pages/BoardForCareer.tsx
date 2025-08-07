@@ -50,6 +50,7 @@ const BoardForCareer: React.FC<Props> = ({ posts }) => {
           AI Chat
         </button>
         <button
+          onClick={() => navigate("/community")}
           className="w-[180px] h-[40px] rounded flex items-center justify-center gap-2 bg-[#B6A1FA] font-semibold"
         >
           <img src={CommunityIcon} alt="Community" className="w-5 h-5" />

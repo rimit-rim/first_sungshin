@@ -26,19 +26,19 @@ const AIChatHome = () => {
       id: "sujeong-wiki",
       icon: bookmark,
       label: "SUJEONG-WIKI",
-      path: "/SoojeongWiki",
+      path: "/wiki",
     },
     {
       id: "ai-chat",
       icon: chat,
       label: "AI Chat",
-      path: "/AIChatHome",
+      path: "/chat",
     },
     {
       id: "community",
       icon: collaboratingInCircle,
       label: "Community",
-      path: "/CommunityHome",
+      path: "/community",
     },
     {
       id: "my-page",

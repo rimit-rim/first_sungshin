@@ -86,37 +86,3 @@ def delete_post(
 
     post_service.delete_post(db, postId)
     return {"message": "게시글이 삭제되었습니다."}
-
-
-# 댓글 목록 조회 - 임시로 빈 배열 반환
-@router.get("/post/{postId}/comments")
-def get_comments(
-        postId: int,
-        db: Session = Depends(get_db),
-        current_user=Depends(get_current_user)
-):
-    """댓글 목록 조회 - 임시로 빈 배열 반환"""
-    print(f"🔍 Getting comments for post ID: {postId}")
-    # 임시로 빈 배열 반환 (나중에 comments 서비스 구현)
-    return []
-
-
-# 댓글 작성 - 임시 구현
-@router.post("/post/{postId}/comments")
-def create_comment(
-        postId: int,
-        comment_data: dict,  # 임시로 dict 사용
-        db: Session = Depends(get_db),
-        current_user=Depends(get_current_user)
-):
-    """댓글 작성 - 임시 구현"""
-    print(f"📝 Creating comment for post ID: {postId}")
-    print(f"💬 Comment content: {comment_data}")
-
-    # 임시로 더미 댓글 반환 (나중에 실제 DB 저장 구현)
-    return {
-        "id": 1,
-        "content": comment_data.get("content", ""),
-        "author": current_user.nickname if hasattr(current_user, 'nickname') else "Anonymous",
-        "created_at": "2025-01-09T10:00:00Z"
-    }

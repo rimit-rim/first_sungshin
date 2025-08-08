@@ -17,6 +17,7 @@ class PostResponse(BaseModel):
     id: int
     title: str
     content: str
+    commentCount: int = 0
     image: Optional[str]
     createdAt: datetime
     updatedAt: Optional[datetime]

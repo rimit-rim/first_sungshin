@@ -5,6 +5,7 @@ class UserResponseSchema(BaseModel):
     id: int
     email: str
     nickname: str
+    verification: int
     createdAt: datetime
 
     class Config:

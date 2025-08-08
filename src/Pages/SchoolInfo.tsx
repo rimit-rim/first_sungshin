@@ -179,15 +179,15 @@ export default function SchoolInfo() {
         <nav className="w-full flex justify-center text-gray-600 font-normal
                         xl:absolute xl:top-[178px] xl:right-[100px] xl:w-[783px] xl:h-[50px] xl:flex xl:items-center xl:justify-end"> 
           <ul className="flex items-center space-x-4 sm:space-x-6 md:space-x-[21px]">
-
-            <li className="flex items-center group"> 
+          <li className="flex items-center group">
               <Link to="/wiki" className="
                 flex items-center px-3 py-2 rounded-lg transition-colors duration-200
-                group-hover:bg-violet-100 group-hover:text-purple-600
+                bg-violet-300 text-black 
+                group-hover:bg-violet-100 group-hover:text-black
                 group-focus:bg-purple-400 group-focus:text-white
                 text-sm
               ">
-                <img src={SoojeongWikiIcon} alt="Bookmark Icon" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain" /> 
+                <img src={SoojeongWikiIcon} alt="Soojeon Wiki Icon" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain" />
                 SOOJEONG-WIKI
               </Link>
             </li>
@@ -213,15 +213,14 @@ export default function SchoolInfo() {
                 Community
               </Link>
             </li>
-            <li className="flex items-center group">
+            <li className="flex items-center group"> 
               <Link to="/mypage" className="
                 flex items-center px-3 py-2 rounded-lg transition-colors duration-200
-                bg-violet-300 text-black 
-                group-hover:bg-violet-100 group-hover:text-black
+                group-hover:bg-violet-100 group-hover:text-purple-600
                 group-focus:bg-purple-400 group-focus:text-white
                 text-sm
               ">
-                <img src={MyPageIcon} alt="My Page Icon" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain" />
+                <img src={MyPageIcon} alt="My Page Icon" className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain" /> 
                 My Page
               </Link>
             </li>
@@ -253,4 +252,5 @@ export default function SchoolInfo() {
       </main>
     </div>
   );
+
 }

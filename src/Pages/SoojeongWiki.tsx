@@ -16,12 +16,12 @@ import LearnMore from '../assets/images/LearnMore.png';
 export default function SoojeongWiki() {
   return (
     <div className="min-h-screen bg-white font-pretendard">
-      {/* Header Section - Consistent with MyPage */}
+     
       <header className='sticky top-0 z-50 w-full bg-white
                          py-4 px-4 sm:px-6 md:px-10 flex flex-col items-center
                          xl:relative xl:h-[250px] xl:block xl:px-0 xl:py-0'> 
         
-        {/* Logo Area - 클릭 시 홈으로 이동 */}
+        {/* 로고 */}
         <div className='mb-4 h-16 w-auto flex-shrink-0
                         xl:absolute xl:top-[50px] xl:left-[100px] xl:w-[727px] xl:h-[105px]'> 
           <Link to="/">
@@ -90,10 +90,9 @@ export default function SoojeongWiki() {
         </nav>
       </header>
 
-      {/* Main Content Area for Wiki Page */}
+      {/* 메인 */}
       <main className="mx-4 sm:mx-6 md:mx-10 xl:mx-[100px] mt-8 p-6">
 
-        {/* Wiki Content Cards Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Campus Map Card */}
           <Link to="/map/soojeong" className="
@@ -107,7 +106,7 @@ export default function SoojeongWiki() {
                 <img src={CampusMapImage} alt="Campus Map" className="max-h-full max-w-full object-contain" />
               </div>
             </div>
-            {/* 변경: 하위 Learn More 링크를 div로 변경 */}
+          
             <div className="flex items-center text-gray-800">
               <img src={LearnMore} alt="Learn more" className="h-5 w-5 mr-1"/>
               Learn More
@@ -115,7 +114,6 @@ export default function SoojeongWiki() {
           </Link>
 
          {/* School Clubs Card */}
-          {/* 변경: div를 Link 컴포넌트로 감싸고, hover 효과 클래스 추가 */}
           <Link to="/clubs" className="
             bg-violet-50 p-6 rounded-lg shadow-sm flex flex-col justify-between h-[250px]
             transition-colors duration-200 hover:bg-violet-300
@@ -127,7 +125,7 @@ export default function SoojeongWiki() {
                 <img src={SchoolClubsImage} alt="School Clubs" className="max-h-full max-w-full object-contain" />
               </div>
             </div>
-            {/* 변경: 하위 Learn More 링크를 div로 변경 */}
+
             <div className="flex items-center text-gray-800">
               <img src={LearnMore} alt="Learn more" className="h-5 w-5 mr-1"/>
               Learn More
@@ -136,7 +134,6 @@ export default function SoojeongWiki() {
 
 
           {/* School Information Card */}
-          {/* 변경: div를 Link 컴포넌트로 감싸고, hover 효과 클래스 추가 */}
           <Link to="/schoolinfo" className="
             bg-violet-50 p-6 rounded-lg shadow-sm flex flex-col justify-between h-[250px]
             transition-colors duration-200 hover:bg-violet-300
@@ -148,7 +145,6 @@ export default function SoojeongWiki() {
                 {SchoolInfoImage && <img src={SchoolInfoImage} alt="School Information" className="max-h-full max-w-full object-contain" />}
               </div>
             </div>
-            {/* 변경: 하위 Learn More 링크를 div로 변경 */}
             <div className="flex items-center text-gray-800">
               <img src={LearnMore} alt="Learn more" className="h-5 w-5 mr-1"/>
               Learn More

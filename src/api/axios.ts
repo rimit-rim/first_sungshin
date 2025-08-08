@@ -10,14 +10,16 @@ const api = axios.create({
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
-
     if (token) {
+      // ✅ headers 안전 초기화
+      config.headers = config.headers ?? {};
       config.headers.Authorization = `Bearer ${token}`;
-      console.log('🔐 Token added to request:', token.substring(0, 20) + '...');
+      if (import.meta.env.DEV) {
+        console.log('🔐 Token added to request:', token.substring(0, 12) + '…');
+      }
     } else {
-      console.log('⚠️ No token found in localStorage');
+      if (import.meta.env.DEV) console.log('⚠️ No token found in localStorage');
     }
-
     return config;
   },
   (error) => {

@@ -23,7 +23,7 @@ import BoardForQAs from "./Pages/BoardForQAs";
 import BoardForPromo from "./Pages/BoardForPromo";
 import Create from "./Pages/Create";
 import PostDetails from "./Pages/Post";
-import AIChatHome from "./Pages/AIChatHome";
+// import AIChatHome from "./Pages/AIChatHome";
 import AIChatInput from "./Pages/AIChatInput";
 import Home from "./Pages/Home";
 import HelloTest from './Pages/HelloTest';
@@ -48,8 +48,8 @@ function App() {
         <Route path="/schoolclubs/sportsclubs" element={<SportsClubs />} />
         <Route path="/schoolclubs/academicstudyclubs" element={<AcademicStudyClubs />} />
         <Route path="/schoolinfo" element={<SchoolInfo />} />
-        <Route path="/chat" element={<AIChatHome />} />
-        <Route path="/chat/input" element={<AIChatInput />} />
+        <Route path="/chat" element={<AIChatInput />} />
+        {/* <Route path="/chat/input" element={<AIChatInput />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/test" element={<HelloTest />} />
         <Route path="/oauth-success" element={<OauthSuccess />} />

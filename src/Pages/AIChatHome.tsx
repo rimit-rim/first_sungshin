@@ -106,7 +106,7 @@ const AIChatInput = () => {
           <div className="flex-1 overflow-y-auto mb-4">
             {chatMessages.length === 0 ? (
               <div className="flex items-center justify-center h-full text-gray-500">
-                <p className="text-lg">안녕하세요! 궁금한 것이 있으시면 언제든 물어보세요.</p>
+                <p className="text-lg">What Can I Help You With?</p>
               </div>
             ) : (
               chatMessages.map((msg, idx) => (

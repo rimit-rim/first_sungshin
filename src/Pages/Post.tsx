@@ -9,7 +9,7 @@ import CommunityIcon from "../assets/images/Collaborating In Circle.png";
 import MyPageIcon from "../assets/images/Admin Settings Male.png";
 import commentIcon from "../assets/images/comment.png";
 
-// 타입 정의
+// 타입 정의 - 백엔드 응답과 일치하도록 수정
 type Post = {
   id: number;
   title: string;
@@ -19,11 +19,16 @@ type Post = {
   board_slug?: string;
 };
 
+// 🔧 백엔드 CommentResponse와 일치하도록 수정
 type Comment = {
   id: number;
-  content: string;
-  author?: string;
-  created_at?: string;
+  comment: string;        // content → comment
+  createdAt: string;      // created_at → createdAt
+  userId: number;         // 백엔드에서 제공
+  user: {                 // author → user 객체
+    id: number;
+    nickname: string;
+  };
 };
 
 const PostDetails = () => {
@@ -47,16 +52,20 @@ const PostDetails = () => {
       }
 
       try {
+        console.log("🔍 Fetching post and comments for postId:", postId);
+
         // 게시글 상세 조회 - 토큰은 자동으로 포함됨
         const postResponse = await api.get(`/api/community/post/${postId}`);
+        console.log("✅ Post fetched:", postResponse.data);
         setPost(postResponse.data);
 
         // 댓글 조회 - 토큰은 자동으로 포함됨
         const commentsResponse = await api.get(`/api/community/post/${postId}/comments`);
+        console.log("✅ Comments fetched:", commentsResponse.data);
         setComments(commentsResponse.data || []);
 
       } catch (error: any) {
-        console.error("Failed to fetch post:", error);
+        console.error("❌ Failed to fetch post:", error);
 
         if (error.response?.status === 404) {
           setError("Post not found");
@@ -81,17 +90,22 @@ const PostDetails = () => {
     setIsSubmitting(true);
 
     try {
-      // 댓글 작성 - 토큰은 자동으로 포함됨
+      console.log("📝 Submitting comment:", commentInput.trim());
+
+      // 🔧 백엔드가 기대하는 필드명으로 수정: content → comment
       const response = await api.post(`/api/community/post/${postId}/comments`, {
-        content: commentInput.trim()
+        comment: commentInput.trim()  // content → comment로 변경
       });
+
+      console.log("✅ Comment created:", response.data);
 
       // 새 댓글을 목록에 추가
       setComments(prev => [...prev, response.data]);
       setCommentInput("");
 
     } catch (error: any) {
-      console.error("Failed to add comment:", error);
+      console.error("❌ Failed to add comment:", error);
+      console.error("❌ Error response:", error.response?.data);
 
       if (error.response?.status === 401) {
         alert("Authentication failed. Please login again.");
@@ -238,14 +252,14 @@ const PostDetails = () => {
             comments.map((comment) => (
               <div key={comment.id} className="border-l-2 border-purple-200 pl-4">
                 <div className="text-xs text-gray-500 mb-1">
-                  {comment.author && <span>{comment.author}</span>}
-                  {comment.created_at && (
-                    <span className="ml-2">
-                      • {new Date(comment.created_at).toLocaleDateString()}
-                    </span>
-                  )}
+                  {/* 🔧 백엔드 응답 구조에 맞게 수정 */}
+                  <span>{comment.user?.nickname || 'Anonymous'}</span>
+                  <span className="ml-2">
+                    • {new Date(comment.createdAt).toLocaleDateString()}
+                  </span>
                 </div>
-                <p className="text-sm whitespace-pre-wrap">{comment.content}</p>
+                {/* 🔧 content → comment로 변경 */}
+                <p className="text-sm whitespace-pre-wrap">{comment.comment}</p>
               </div>
             ))
           )}

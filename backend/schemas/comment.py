@@ -18,9 +18,9 @@ class CommentUserResponse(BaseModel):
 class CommentResponse(BaseModel):
     id: int
     comment: str
-    createdAt: datetime = Field(..., alias="created_at")
+    createdAt: datetime
+    userId: int
     user: CommentUserResponse
 
     class Config:
         from_attributes = True
-        populate_by_name = True

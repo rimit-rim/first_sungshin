@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from models import comment as commentModel, post as postModel
 from schemas import comment as commentSchema
 from fastapi import HTTPException, status
@@ -9,10 +9,18 @@ def getCommentsByPost(db: Session, postId: int):
     if not post:
         raise HTTPException(status_code=404, detail="게시글을 찾을 수 없습니다.")
 
-    comments = db.query(commentModel.Comment).filter(commentModel.Comment.postId == postId).all()
+    comments = (db.query(commentModel.Comment)
+                .options(joinedload(commentModel.Comment.user))
+                .filter(commentModel.Comment.postId == postId)
+                .all())
 
-    # SQLAlchemy 객체를 Pydantic 응답 모델로 변환
-    return [commentSchema.CommentResponse.model_validate(c) for c in comments]
+    try:
+        return [
+            commentSchema.CommentResponse.model_validate(comment)
+            for comment in comments
+        ]
+    except Exception:
+        raise HTTPException(status_code=500, detail="댓글 변환 중 오류가 발생했습니다.")
 
 
 def createComment(db: Session, postId: int, userId: int, commentData: commentSchema.CommentCreate):
@@ -20,17 +28,26 @@ def createComment(db: Session, postId: int, userId: int, commentData: commentSch
     if not post:
         raise HTTPException(status_code=404, detail="게시글을 찾을 수 없습니다.")
 
-    dbComment = commentModel.Comment(
-        comment=commentData.comment,
-        postId=postId,
-        userId=userId,
-    )
-    db.add(dbComment)
-    db.commit()
-    db.refresh(dbComment)
+    try:
+        dbComment = commentModel.Comment(
+            comment=commentData.comment,
+            postId=postId,
+            userId=userId,
+        )
+        db.add(dbComment)
+        db.commit()
+        db.refresh(dbComment)
 
-    # SQLAlchemy → Pydantic 모델 변환
-    return commentSchema.CommentResponse.model_validate(dbComment)
+        dbComment = (db.query(commentModel.Comment)
+                     .options(joinedload(commentModel.Comment.user))
+                     .filter(commentModel.Comment.id == dbComment.id)
+                     .first())
+
+        return commentSchema.CommentResponse.model_validate(dbComment)
+
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"댓글 생성 중 오류가 발생했습니다: {str(e)}")
 
 
 def updateComment(db: Session, commentId: int, userId: int, commentData: commentSchema.CommentUpdate):
@@ -43,8 +60,6 @@ def updateComment(db: Session, commentId: int, userId: int, commentData: comment
     comment.comment = commentData.comment
     db.commit()
     db.refresh(comment)
-
-    # SQLAlchemy → Pydantic 모델 변환
     return commentSchema.CommentResponse.model_validate(comment)
 
 

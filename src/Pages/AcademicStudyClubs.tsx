@@ -206,7 +206,7 @@ export default function AcademicStudyClubs() {
                          xl:relative xl:h-[250px] xl:block xl:px-0 xl:py-0'> 
         
         <div className='mb-4 h-16 w-auto flex-shrink-0
-                        xl:absolute xl:top-[50px] xl:left-[100px] xl:w-[727px] xl:h-[105px]'> 
+                        xl:absolute xl:top-[40px] xl:left-[100px] xl:w-[627px] xl:h-[105px]'> 
           <Link to="/home">
             <img
               src={HomeLogo} 

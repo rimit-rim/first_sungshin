@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../api/axios"; // axios 인스턴스 import
 
 import HomeLogo from "../assets/images/HomeLogo.png";
@@ -28,16 +28,15 @@ const BoardForFreeUse: React.FC = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        console.log('📡 Fetching free board posts...');
-        const response = await api.get('/api/community/free');
-        console.log('✅ Posts fetched:', response.data);
+        console.log("📡 Fetching free board posts...");
+        const response = await api.get("/api/community/free");
+        console.log("✅ Posts fetched:", response.data);
         setPosts(response.data);
       } catch (error: any) {
-        console.error('❌ Failed to fetch posts:', error);
+        console.error("❌ Failed to fetch posts:", error);
 
         if (error.response?.status === 401) {
           setError("Please login to view posts");
-          // 401 에러는 axios interceptor에서 자동 처리됨
         } else {
           setError("Failed to load posts");
         }
@@ -83,52 +82,117 @@ const BoardForFreeUse: React.FC = () => {
   const sortedPosts = [...posts].sort((a, b) => b.id - a.id);
 
   return (
-    <div className="flex flex-col items-center w-full">
-      {/* 로고 */}
-      <div className="w-full px-6 py-4 flex items-center justify-start">
-        <button onClick={() => navigate("/home")}>
-          <img src={HomeLogo}
-          alt="Home Logo"
-          className="h-14"
-          />
-        </button>
-      </div>
+    <div className="flex flex-col items-center w-full font-pretendard">
+      {/* 통일된 상단 헤더 */}
+      <header
+        className="sticky top-0 z-20 w-full bg-white
+                   py-4 px-4 sm:px-6 md:px-10 flex flex-col items-center
+                   xl:relative xl:h-[250px] xl:block xl:px-0 xl:py-0"
+      >
+        {/* 로고 */}
+        <div
+          className="mb-4 h-16 w-auto flex-shrink-0
+                     xl:absolute xl:top-[40px] xl:left-[100px] xl:w-[627px] xl:h-[105px]"
+        >
+          <Link to="/home">
+            <img
+              src={HomeLogo}
+              alt="Welcome to Sungshin Logo"
+              className="w-full h-full object-contain"
+            />
+          </Link>
+        </div>
 
-      {/* 네비게이션 */}
-      <div className="flex justify-end gap-4 mb-12">
-        <button
-          onClick={() => navigate("/wiki")}
-          className="w-[200px] h-[40px] rounded flex items-center justify-center gap-2 hover:bg-[#E5DFFD] hover:font-semibold active:bg-[#B6A1FA] active:font-semibold transition"
+        {/* Back 버튼 */}
+        <div
+          className="w-full flex items-center justify-between px-4 sm:px-6 md:px-10
+                     xl:absolute xl:top-[178px] xl:left-[100px] xl:right-[100px]"
         >
-          <img src={BookmarkIcon} alt="Sujeong Wiki" className="w-5 h-5" />
-          SUJEONG-WIKI
-        </button>
-        <button
-          onClick={() => navigate("/chat")}
-          className="w-[180px] h-[40px] rounded flex items-center justify-center gap-2 hover:bg-[#E5DFFD] hover:font-semibold active:bg-[#B6A1FA] active:font-semibold transition"
+          <Link to="/community">
+            <span className="text-gray-600 hover:text-purple-600">← Back</span>
+          </Link>
+        </div>
+
+        {/* 네비게이션 */}
+        <nav
+          className="w-full flex justify-center text-gray-600 font-normal
+                     xl:absolute xl:top-[178px] xl:right-[100px]
+                     xl:w-[783px] xl:h-[50px] xl:flex xl:items-center xl:justify-end"
         >
-          <img src={ChatIcon} alt="AI Chat" className="w-5 h-5" />
-          AI Chat
-        </button>
-        <button
-          onClick={() => navigate("/community")}
-          className="w-[180px] h-[40px] rounded flex items-center justify-center gap-2 bg-[#B6A1FA] font-semibold"
-        >
-          <img src={CommunityIcon} alt="Community" className="w-5 h-5" />
-          Community
-        </button>
-        <button
-          onClick={() => navigate("/mypage")}
-          className="w-[180px] h-[40px] border rounded flex items-center justify-center gap-2 hover:bg-[#E5DFFD] hover:font-semibold active:bg-[#B6A1FA] active:font-semibold transition"
-        >
-          <img src={MyPageIcon} alt="MyPage" className="w-5 h-5" />
-          My Page
-        </button>
-      </div>
+          <ul className="flex items-center space-x-4 sm:space-x-6 md:space-x-[21px]">
+            <li className="flex items-center group">
+              <Link
+                to="/wiki"
+                className="flex items-center px-3 py-2 rounded-lg transition-colors duration-200
+                           group-hover:bg-violet-100 group-hover:text-purple-600
+                           group-focus:bg-purple-400 group-focus:text-white text-sm"
+              >
+                <img
+                  src={BookmarkIcon}
+                  alt="Bookmark Icon"
+                  className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain"
+                />
+                SOOJEONG-WIKI
+              </Link>
+            </li>
+
+            <li className="flex items-center group">
+              <Link
+                to="/chat"
+                className="flex items-center px-3 py-2 rounded-lg transition-colors duration-200
+                           group-hover:bg-violet-100 group-hover:text-purple-600
+                           group-focus:bg-purple-400 group-focus:text-white text-sm"
+              >
+                <img
+                  src={ChatIcon}
+                  alt="AI Chat Icon"
+                  className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain"
+                />
+                AI Chat
+              </Link>
+            </li>
+
+            <li className="flex items-center group">
+              <Link
+                to="/community"
+                className="flex items-center px-3 py-2 rounded-lg transition-colors duration-200
+                           bg-violet-300 text-black
+                           group-hover:bg-violet-100 group-hover:text-purple-600
+                           group-focus:bg-purple-400 group-focus:text-white text-sm"
+              >
+                <img
+                  src={CommunityIcon}
+                  alt="Community Icon"
+                  className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain"
+                />
+                Community
+              </Link>
+            </li>
+
+            <li className="flex items-center group">
+              <Link
+                to="/mypage"
+                className="flex items-center px-3 py-2 rounded-lg transition-colors duration-200
+                           group-hover:bg-violet-100 group-hover:text-purple-600
+                           group-focus:bg-purple-400 group-focus:text-white text-sm"
+              >
+                <img
+                  src={MyPageIcon}
+                  alt="My Page Icon"
+                  className="h-4 w-4 sm:h-5 sm:w-5 mr-1 object-contain"
+                />
+                My Page
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
       {/* 게시판 제목 */}
-      <div className="w-[1240px] flex items-center justify-between mb-6">
-        <div className="text-[28pt] font-medium font-pretendard">Board for Free Use</div>
+      <div className="w-[1240px] flex items-center justify-between mb-6 mt-6">
+        <div className="text-[28pt] font-medium font-pretendard">
+          Board for Free Use
+        </div>
         <button
           onClick={() => navigate("/create", { state: { board: "free" } })}
           className="bg-violet-100 text-black text-base px-4 py-2 rounded-xl"
@@ -142,7 +206,9 @@ const BoardForFreeUse: React.FC = () => {
         {sortedPosts.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">No posts yet.</p>
-            <p className="text-gray-400 text-sm mt-2">Be the first to write a post!</p>
+            <p className="text-gray-400 text-sm mt-2">
+              Be the first to write a post!
+            </p>
           </div>
         ) : (
           sortedPosts.map((post) => (
@@ -165,7 +231,9 @@ const BoardForFreeUse: React.FC = () => {
               <div className="flex items-center justify-between mt-2">
                 <div className="flex items-center gap-2">
                   <img src={commentIcon} alt="comment" className="w-7 h-5" />
-                  <span className="text-[16pt] font-pretendard">{post.commentCount || 0}</span>
+                  <span className="text-[16pt] font-pretendard">
+                    {post.commentCount || 0}
+                  </span>
                 </div>
 
                 {/* 작성자와 날짜 정보 */}

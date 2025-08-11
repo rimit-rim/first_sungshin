@@ -17,7 +17,6 @@ interface UserInfo {
   verification: number; // 0: 미인증사용자, 1 or 2: 인증사용자
   createdAt: string;
 }
-
 export default function MyPage() {
   const [user, setUser] = useState<UserInfo | null>(null);
   const [loading, setLoading] = useState(true);
@@ -26,6 +25,22 @@ export default function MyPage() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
+        // 구글 로그인 정보가 있으면 먼저 사용
+        const googleInfo = localStorage.getItem('googleUserInfo');
+        if (googleInfo) {
+          const parsed = JSON.parse(googleInfo);
+          setUser({
+            id: parsed.id || 0,
+            nickname: parsed.name || parsed.nickname,
+            email: parsed.email,
+            verification: parsed.verification || 0,
+            createdAt: parsed.createdAt || new Date().toISOString()
+          });
+          setLoading(false);
+          return;
+        }
+  
+        // 구글 정보가 없으면 기존 API 호출
         const token = localStorage.getItem('token');
         const response = await axios.get<UserInfo>('/api/users/me', {
           headers: {

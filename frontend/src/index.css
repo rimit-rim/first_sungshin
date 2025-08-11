@@ -1,6 +1,4 @@
-@import "../../node_modules/tailwindcss";
-
-@font face {
+@font-face {
   font-family: 'Pretendard';
   src: url('assets/fonts/PretendardVariable.woff2') format('woff2-variations');
   font-weight: 45 920;

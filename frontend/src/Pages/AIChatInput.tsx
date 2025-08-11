@@ -62,7 +62,7 @@ const AIChatInput = () => {
 
     try {
       // 챗봇 API 호출
-      const response = await api.post("/api/chat", {
+      const response = await api.post("/chat", {
         question: trimmed,
       });
 

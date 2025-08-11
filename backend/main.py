@@ -12,7 +12,7 @@ app = FastAPI()
 # cors 설정
 origins = [
     "http://localhost:5173",  # 개발용
-    "https://<frontend>.onrender.com",  # 배포용
+    "https://welcometosungshin-fe.onrender.com",  # 배포용
 ]
 
 app.add_middleware(

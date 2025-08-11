@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000', // FastAPI 서버 주소
+  baseURL: import.meta.env.VITE_API_BASE_URL + "/api",
   withCredentials: true,            // 인증이 필요한 경우
   timeout: 10000,                   // 10초 타임아웃
 });

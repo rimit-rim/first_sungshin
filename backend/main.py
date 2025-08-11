@@ -10,11 +10,14 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # cors 설정
+origins = [
+    "http://localhost:5173",  # 개발용
+    "https://<frontend>.onrender.com",  # 배포용
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173"
-    ],  # 프론트 주소
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

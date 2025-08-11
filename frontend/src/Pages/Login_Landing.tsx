@@ -7,9 +7,14 @@ interface LoginLandingProps {
 }
 
 const Login_Landing = ({ className, googleLogoIcon, property1 }: LoginLandingProps): React.JSX.Element => {
+  // 환경에 따른 API URL 설정
+  const API_BASE_URL = import.meta.env.MODE === 'production'
+    ? 'https://welcometosungshin-be.onrender.com'
+    : 'http://localhost:8000';
+
   // 클릭 핸들러 정의
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:8000/api/auth/google/login";
+    window.location.href = `${API_BASE_URL}/api/auth/google/login`;
   };
 
   return (

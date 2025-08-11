@@ -55,12 +55,12 @@ const PostDetails = () => {
         console.log("🔍 Fetching post and comments for postId:", postId);
 
         // 게시글 상세 조회 - 토큰은 자동으로 포함됨
-        const postResponse = await api.get(`/api/community/post/${postId}`);
+        const postResponse = await api.get(`/community/post/${postId}`);
         console.log("✅ Post fetched:", postResponse.data);
         setPost(postResponse.data);
 
         // 댓글 조회 - 토큰은 자동으로 포함됨
-        const commentsResponse = await api.get(`/api/community/post/${postId}/comments`);
+        const commentsResponse = await api.get(`/community/post/${postId}/comments`);
         console.log("✅ Comments fetched:", commentsResponse.data);
         setComments(commentsResponse.data || []);
 
@@ -93,7 +93,7 @@ const PostDetails = () => {
       console.log("📝 Submitting comment:", commentInput.trim());
 
       // 🔧 백엔드가 기대하는 필드명으로 수정: content → comment
-      const response = await api.post(`/api/community/post/${postId}/comments`, {
+      const response = await api.post(`/community/post/${postId}/comments`, {
         comment: commentInput.trim()  // content → comment로 변경
       });
 

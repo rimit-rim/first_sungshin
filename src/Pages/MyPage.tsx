@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import api from "../api/axios"; // axios 인스턴스 import
 
 // 로고+네비 
 import HomeLogo from '../assets/images/HomeLogo.png';
@@ -42,7 +42,7 @@ export default function MyPage() {
   
         // 구글 정보가 없으면 기존 API 호출
         const token = localStorage.getItem('token');
-        const response = await axios.get<UserInfo>('/api/users/me', {
+        const response = await api.get<UserInfo>('/api/users/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

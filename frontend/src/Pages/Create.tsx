@@ -33,7 +33,7 @@ const Create: React.FC = () => {
 
     try {
       // API로 게시글 생성 요청 - 토큰은 자동으로 포함됨
-      const response = await api.post(`/api/community/${board}`, {
+      const response = await api.post(`/community/${board}`, {
         title: title.trim(),
         content: bodyText.trim()
       });

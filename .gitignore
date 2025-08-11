@@ -1,3 +1,6 @@
+# =========================
+# 📦 공통
+# =========================
 # Logs
 logs
 *.log
@@ -7,35 +10,46 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# OS / Editor
+.DS_Store
+Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.env
 
 # Python bytecode
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-backend/.env
-.env
-test.http
+
+# =========================
+# 🖥 Frontend (Vite/React)
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+node_modules/
+
+# =========================
+# 🐍 Backend (FastAPI/Python)
+# =========================
+backend/.env           # 환경변수
 backend/__pycache__/
-__pycache__
-backend/routers/__pycache__/
-backend/schemas/__pycache__/
-backend/core/__pycache__/
-backend/deps/__pycache__/
-backend/models/__pycache__/
-backend/services/__pycache__/
+backend/**/*.pyc
+backend/venv/
+backend/.venv/
+backend/.mypy_cache/
+backend/.pytest_cache/
+
+# =========================
+# 🧪 테스트 / 기타
+# =========================
+test.http

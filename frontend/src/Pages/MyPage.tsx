@@ -42,7 +42,7 @@ export default function MyPage() {
   
         // 구글 정보가 없으면 기존 API 호출
         const token = localStorage.getItem('token');
-        const response = await api.get<UserInfo>('/api/users/me', {
+        const response = await api.get<UserInfo>('/users/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -29,7 +29,7 @@ const BoardForCareer: React.FC = () => {
     const fetchPosts = async () => {
       try {
         console.log("📡 Fetching career board posts...");
-        const response = await api.get("/api/community/career");
+        const response = await api.get("/community/career");
         console.log("✅ Career posts fetched:", response.data);
         setPosts(response.data);
       } catch (error: any) {

@@ -29,7 +29,7 @@ const BoardForQAs: React.FC = () => {
     const fetchPosts = async () => {
       try {
         console.log("📡 Fetching Q&A board posts...");
-        const response = await api.get("/api/community/qna");
+        const response = await api.get("/community/qna");
         console.log("✅ Q&A posts fetched:", response.data);
         setPosts(response.data);
       } catch (error: any) {

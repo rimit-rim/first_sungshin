@@ -29,7 +29,7 @@ const BoardForPromo: React.FC = () => {
     const fetchPosts = async () => {
       try {
         console.log("📡 Fetching promotion board posts...");
-        const response = await api.get("/api/community/promo");
+        const response = await api.get("/community/promo");
         console.log("✅ Promotion posts fetched:", response.data);
         setPosts(response.data);
       } catch (error: any) {

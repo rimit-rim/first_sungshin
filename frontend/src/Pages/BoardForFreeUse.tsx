@@ -29,7 +29,7 @@ const BoardForFreeUse: React.FC = () => {
     const fetchPosts = async () => {
       try {
         console.log("📡 Fetching free board posts...");
-        const response = await api.get("/api/community/free");
+        const response = await api.get("/community/free");
         console.log("✅ Posts fetched:", response.data);
         setPosts(response.data);
       } catch (error: any) {

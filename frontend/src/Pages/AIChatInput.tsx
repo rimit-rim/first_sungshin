@@ -80,7 +80,7 @@ const AIChatInput = () => {
         {
           sender: "ai",
           content:
-            "죄송합니다. 현재 서비스에 문제가 발생했습니다. 잠시 후 다시 시도해주세요.",
+            "Sorry, there is a trouble with our service. Please try again.",
         },
       ]);
     } finally {
@@ -214,8 +214,8 @@ const AIChatInput = () => {
               <div className="flex items-center justify-center h-full text-gray-0">
                 <p className="text-lg">
                   Ask me what you are curious about school life.<br></br>
-                  For example: Where is the Soojeong Hall?, <br></br>
-                  How do I get to the Sungshin Hall from the Student Hall?
+                  For example: Where is the Soojeong Building?, <br></br>
+                  How do I get to the Sungshin Building from the Student Center?
                 </p>
               </div>
             ) : (

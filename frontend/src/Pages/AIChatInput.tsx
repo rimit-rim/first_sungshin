@@ -214,7 +214,7 @@ const AIChatInput = () => {
               <div className="flex items-center justify-center h-full text-gray-0">
                 <p className="text-lg">
                   Ask me what you are curious about school life.<br></br>
-                  For example: Where is the Soojeong Building?, <br></br>
+                  For example: Where is the Soojung Building?, <br></br>
                   How do I get to the Sungshin Building from the Student Center?
                 </p>
               </div>

@@ -74,3 +74,5 @@ app.openapi = custom_openapi
 @app.get("/hello")
 def read_hello():
     return {"message": "Hello from FastAPI!"}
+
+# pdf 파일 변경시 : python tools/build_vector_db.py

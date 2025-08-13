@@ -34,7 +34,7 @@ const LandingPage = (): React.JSX.Element => {
         />
         <Link
           to="/wiki"
-          className="mt-8 px-4 py-2 border border-gray-300 rounded text-[#aeaeb2] text-sm hover:bg-gray-100 transition"
+          className="mt-8 px-4 py-2 border border-gray-300 rounded-lg text-[#aeaeb2] text-sm hover:bg-gray-100 transition"
         >
           View only SUJEONG-WIKI without logging in.
         </Link>

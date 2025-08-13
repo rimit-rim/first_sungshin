@@ -17,10 +17,10 @@ const Login_Landing = ({ className, googleLogoIcon, property1 }: LoginLandingPro
       <div className="w-full flex justify-center font-pretendard">
         <button
           onClick={handleGoogleLogin}
-          className="w-full max-w-[425px] h-[53px] flex items-center justify-center gap-3 border border-gray-300 rounded shadow hover:bg-gray-100 transition"
+          className="w-full max-w-[425px] h-[53px] rounded-lg flex items-center justify-center gap-3 border border-gray-300 rounded px-3 py-5 shadow hover:bg-gray-100 transition font-pretendard"
         >
           <img src={googleLogoIcon} alt="Google Logo" className="w-5 h-5" />
-          <span className="text-[22px] font-light font-pretendard">
+          <span className="text-[20px] font-light font-pretendard">
             {property1 === "default" ? "Continue With Google" : "Other Login"}
           </span>
         </button>

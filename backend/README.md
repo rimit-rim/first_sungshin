@@ -1,101 +1,76 @@
-# 🔮 first_sungshin
-**어서와, 성신은 처음이지?** BE 레포지토리
+# 🔮 Welcome To Sungshin Backend
 
-
-## 📦 백엔드 세팅 공유 (FastAPI + PostgreSQL + SQLAlchemy)
-
-
-### ✅ 기본 스택
-- FastAPI (비동기 웹 프레임워크)
-- PostgreSQL (RDB)
-- SQLAlchemy (ORM)
-- Pydantic (데이터 검증 및 직렬화)
-
+## 📌 프로젝트 소개
+외국인 학생들을 위한 커뮤니티 서비스 백엔드.  
+FastAPI 기반으로 인증, 게시글/댓글 API, AI 챗봇을 제공합니다.
 
 ---
 
-## 📁 프로젝트 구조
+## 🧑‍🤝‍🧑 팀 소개
+이수빈 : 게시글 API
 
-```
-first_sungshin/
-├── main.py # FastAPI 앱 진입점
-├── database.py # DB 연결 및 세션 관리
-├── models/ # SQLAlchemy 모델 정의 (User, Post, Board 등)
-│ ├── user.py
-│ ├── post.py
-│ ├── board.py
-│ └── comment.py
-├── schemas/ # Pydantic 스키마 (입력/출력 DTO)
-│ ├── user.py
-│ ├── post.py
-│ ├── board.py
-│ └── comment.py
-├── services/ # 비즈니스 로직 (DB 처리 및 내부 동작)
-│ ├── user_service.py
-│ ├── post_service.py
-│ ├── board_service.py
-│ ├── comment_service.py
-│ └── chatbot_service.py # AI 챗봇 코드
-├── routers/ # FastAPI 라우터 정의 (엔드포인트)
-│ ├── auth.py
-│ ├── users.py
-│ ├── posts.py
-│ ├── boards.py
-│ ├── comments.py
-│ └── chatbot.py # 프론트 요청 받는 API
-├── deps/ # Depends용 공통 의존성 처리
-│ └── auth.py # 권한 확인, get_current_user 등
-├── core/ # 설정, 보안, 유틸
-│ ├── config.py # 환경변수 로딩
-│ └── security.py # JWT, 암호화 관련 함수
-├── data/ # csv 파일 저장
-├── .env # 환경변수 파일 (DB URL, 시크릿 키 등)
-├── requirements.txt # 의존성 목록
+염수림 : 구글 로그인, 댓글 API
+
+윤지원 : AI 챗봇
+
+---
+
+## 🛠️ 기술 스택
+- **Framework** : FastAPI
+- **Database** : PostgreSQL, SQLAlchemy (ORM)
+- **Validation** : Pydantic
+- **Auth** : JWT, Google OAuth2
+- **AI/ML** : LangChain, OpenAI API
+- **ETC** : dotenv(.env), ERD 설계
+
+---
+
+## 📂 프로젝트 구조
+```bash
+backend/
+├── main.py               # FastAPI 앱 진입점
+├── database.py           # DB 연결 및 세션 관리
+├── models/               # SQLAlchemy 모델 정의
+│   ├── user.py
+│   ├── post.py
+│   ├── board.py
+│   └── comment.py
+├── schemas/              # Pydantic 스키마 (입출력 DTO)
+│   ├── user.py
+│   ├── post.py
+│   ├── board.py
+│   └── comment.py
+├── services/             # 비즈니스 로직
+│   ├── user_service.py
+│   ├── post_service.py
+│   ├── board_service.py
+│   ├── comment_service.py
+│   └── chatbot_service.py   # AI 챗봇
+├── routers/              # FastAPI 라우터
+│   ├── auth.py
+│   ├── users.py
+│   ├── posts.py
+│   ├── boards.py
+│   ├── comments.py
+│   └── chatbot.py
+├── deps/                 # Depends 공통 의존성
+│   └── db.py
+├── core/                 # 설정, 보안
+│   ├── config.py
+│   └── security.py
+├── data/                 # CSV 파일 저장
+├── tools/                # 벡터DB 빌드 스크립트
+│   └── build_vector_db.py
+├── .env                  # 환경변수
+├── requirements.txt      # 의존성 목록
 └── README.md
 ```
 
-
 ---
 
-## ✅ 실행 방법
-
-1. `.env` 파일 만들기 (루트 디렉토리에)
-
-```env
-DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/yourdb
-```
-
-2. 필요한 패키지 설치
-
-```bash
-pip install -r requirements.txt
-```
-
-3. 서버 실행
-
-```bash
-uvicorn main:app --reload
-```
-
-4. API 문서 확인
-
-[http://localhost:8000/docs](http://localhost:8000/docs)
+## 🗂️ ERD
+<img width="1635" height="781" alt="WtoS ERD" src="https://github.com/user-attachments/assets/786540d2-6812-41c9-b61f-3cf730372eea" />
 
 ---
-
-## ✅ 규칙 요약 (작성 컨벤션)
-
-- 변수명: 카멜케이스 (`createdAt`, `userId`)
-  → 프론트 API 응답 기준. DB 모델이나 내부 로직에서는 snake_case 사용
-- 클래스: 대문자로 시작
-- 의미 없는 한 글자 변수 지양
-- 패키지명은 소문자
-
----
-
-## 📌 참고
-
-- ORM: SQLAlchemy 사용
-- DB: PostgreSQL
-- API 서버: FastAPI
-- 인증 방식: JWT (access token을 Authorization 헤더에 담아 인증)
+## 🌐 서버 아키텍처
+<img width="1964" height="1042" alt="WtoS_tech_stack" src="https://github.com/user-attachments/assets/1bf2b694-8c06-45cc-be4c-c02f0bf8b65a" />
